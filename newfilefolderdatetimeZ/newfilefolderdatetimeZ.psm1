@@ -1,6 +1,11 @@
 function newfilefolderdatetimeZ
 {
-    param([switch]$directory, [switch]$logfile)
+    param([switch]$console, [switch]$directory, [switch]$logfile)
+
+    if ($console.IsPresent)
+    {
+        $(Get-Date).ToUniversalTime().ToString('yyyyMMddTHHmmssfffZ')
+    }
 
     if ($directory.IsPresent)
     {
